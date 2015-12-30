@@ -1,0 +1,34 @@
+GIT
+  remote: git://github.com/ermaker/xingAPI.git
+  revision: 988061d0f66c6f94677417f1eecac92314939ae3
+  specs:
+    xingAPI (0.1.0)
+      dotenv
+      ffi
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    dotenv (2.0.2)
+    ffi (1.9.10-x86-mingw32)
+    puma (2.15.3)
+    rack (1.6.4)
+    rack-protection (1.5.3)
+      rack
+    sinatra (1.4.6)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    tilt (2.0.1)
+
+PLATFORMS
+  x86-mingw32
+
+DEPENDENCIES
+  puma
+  rack
+  sinatra
+  xingAPI!
+
+BUNDLED WITH
+   1.11.2
