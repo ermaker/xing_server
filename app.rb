@@ -7,7 +7,7 @@ require 'xingAPI/api'
 class App < Sinatra::Application
   configure do
     @@api = XingAPI::API.new(
-      ENV['IP'], ENV['PORT'],
+      ENV['TRADE_IP'], ENV['TRADE_PORT'],
       ENV['ID'], ENV['PASS'], ENV['PASS2'])
   end
 
