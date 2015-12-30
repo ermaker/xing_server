@@ -8,7 +8,7 @@ RSpec.describe App do
   end
 
   def post_json(url, json)
-    post(url, json, content_type: 'application/json')
+    post(url, MultiJson.dump(json), 'Content-Type': 'application/json')
   end
 
   xit 'get /account/:idx works' do
