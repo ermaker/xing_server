@@ -26,5 +26,19 @@ RSpec.describe App do
       expect(response['response'].keys).to have_exactly(127).items
       expect(response['message']).to eq('[00000] 조회완료')
     end
+
+    it 'CSPAT00600 works' do
+      post_json '/tr/CSPAT00600',
+        account: nil, pass: ENV['ACCOUNT_PASS'],
+        shcode: 122630, qty: 1, sell_or_buy: :sell
+      expect(last_response).to be_ok
+      response = MultiJson.load(last_response.body)
+      expect(response.keys).to eq(['response', 'message'])
+      expect(response['response'].keys).to have_exactly(2).items
+      block1 = response['response']['STRUCT_CSPAT00600OutBlock1']
+      expect(block1.keys).to have_exactly(26).items
+      block2 = response['response']['STRUCT_CSPAT00600OutBlock2']
+      expect(block2.keys).to have_exactly(18).items
+    end
   end
 end

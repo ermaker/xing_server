@@ -17,11 +17,27 @@ class App < Sinatra::Application
   end
 
   post '/tr/:tr_name' do |tr_name|
-    abort unless tr_name == 't1901'
-    @result = @@api.tr_t1901(params[:shcode])
-    jbuilder <<-EOJ
-      json.response @result[:data]
-      json.(@result, :message)
-    EOJ
+    case tr_name
+    when 't1901'
+      @result = @@api.tr_t1901(params[:shcode])
+      jbuilder <<-EOJ
+        json.response @result[:data]
+        json.(@result, :message)
+      EOJ
+    when 'CSPAT00600'
+      @result = @@api.tr_CSPAT00600(
+        params[:account],
+        params[:pass],
+        params[:shcode],
+        params[:qty],
+        params[:sell_or_buy].to_sym,
+        )
+      jbuilder <<-EOJ
+        json.response @result[:data]
+        json.(@result, :message)
+      EOJ
+    else
+      abort
+    end
   end
 end
