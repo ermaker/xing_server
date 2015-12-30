@@ -7,7 +7,7 @@ RSpec.describe App do
     described_class
   end
 
-  it 'works' do
+  it '/account/:idx works' do
     get '/account/0'
     expect(MultiJson.load(last_response.body).keys).to eq(['response'])
   end
