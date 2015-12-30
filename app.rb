@@ -15,4 +15,13 @@ class App < Sinatra::Application
     @account = @@api.account(idx.to_i)
     jbuilder 'json.response @account'
   end
+
+  post '/tr/:tr_name' do |tr_name|
+    abort unless tr_name == 't1901'
+    @result = @@api.tr_t1901(params[:shcode])
+    jbuilder <<-EOJ
+      json.response @result[:data]
+      json.(@result, :message)
+    EOJ
+  end
 end

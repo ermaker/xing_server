@@ -19,6 +19,7 @@
 
 require 'dotenv'
 Dotenv.load
+require 'rspec/collection_matchers'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

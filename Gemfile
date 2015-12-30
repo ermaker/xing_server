@@ -11,6 +11,7 @@ gem 'tilt-jbuilder'
 
 group :development, :test do
   gem 'rspec'
+  gem 'rspec-collection_matchers'
   gem 'rack-test'
 end
 

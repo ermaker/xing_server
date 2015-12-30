@@ -68,6 +68,8 @@ GEM
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
       rspec-mocks (~> 3.4.0)
+    rspec-collection_matchers (1.1.2)
+      rspec-expectations (>= 2.99.0.beta1)
     rspec-core (3.4.1)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -104,6 +106,7 @@ DEPENDENCIES
   rack-test
   rake
   rspec
+  rspec-collection_matchers
   sinatra
   tilt-jbuilder
   xingAPI!
