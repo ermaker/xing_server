@@ -27,7 +27,7 @@ RSpec.describe App do
       expect(response['message']).to eq('[00000] 조회완료')
     end
 
-    it 'CSPAT00600 works' do
+    xit 'CSPAT00600 works' do
       post_json '/tr/CSPAT00600',
         account: nil, pass: ENV['ACCOUNT_PASS'],
         shcode: 122630, qty: 1, sell_or_buy: :sell
