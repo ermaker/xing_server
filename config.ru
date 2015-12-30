@@ -1,2 +1,4 @@
 require './app'
-run App
+map '/v0' do
+  run App
+end
