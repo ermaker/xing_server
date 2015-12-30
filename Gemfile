@@ -7,6 +7,7 @@ gem 'sinatra'
 
 gem 'xingAPI', github: 'ermaker/xingAPI'
 gem 'dotenv'
+gem 'tilt-jbuilder'
 
 group :development, :test do
   gem 'rspec'
