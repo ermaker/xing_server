@@ -1,10 +1,11 @@
 GIT
   remote: git://github.com/ermaker/xingAPI.git
-  revision: 10d9ed19236412991782a4222b71350353ff0998
+  revision: e75c286f044fed7babc7de91bcaddec1cce8e96a
   specs:
     xingAPI (0.1.0)
       dotenv
       ffi
+      multi_json
 
 GEM
   remote: http://rubygems.org/
@@ -42,7 +43,7 @@ GEM
     listen (3.0.5)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
-    lumberjack (1.0.9)
+    lumberjack (1.0.10)
     method_source (0.8.2)
     minitest (5.8.3)
     multi_json (1.11.2)
