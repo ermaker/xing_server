@@ -21,8 +21,8 @@ class App < Sinatra::Application
     when 't1901'
       @result = @@api.tr_t1901(params['shcode'].to_s)
       jbuilder <<-EOJ
-        json.response @result[:data]
-        json.(@result, :message)
+        json.response @result['data']
+        json.(@result, 'message')
       EOJ
     when 'CSPAT00600'
       @result = @@api.tr_CSPAT00600(
@@ -33,8 +33,8 @@ class App < Sinatra::Application
         params['sell_or_buy'].to_sym,
         )
       jbuilder <<-EOJ
-        json.response @result[:data]
-        json.(@result, :message)
+        json.response @result['data']
+        json.(@result, 'message')
       EOJ
     else
       abort
