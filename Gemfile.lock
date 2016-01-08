@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/ermaker/xingAPI.git
-  revision: 97d3aef6db30a119cc31cc0b50b01a250457eead
+  revision: e8f5264e8c703ccb69f1ea01191b4c29845238ae
   specs:
     xingAPI (0.1.0)
       dotenv
