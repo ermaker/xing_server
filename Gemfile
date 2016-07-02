@@ -1,5 +1,9 @@
 source 'http://rubygems.org'
 
+# For ruby 2.0
+gem 'activesupport', '~> 4'
+gem 'listen', '~> 3.0', '< 3.1'
+
 gem 'rake'
 gem 'puma'
 gem 'rack'
