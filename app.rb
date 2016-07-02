@@ -9,6 +9,13 @@ class App < Sinatra::Application
     @@api = XingAPI::Connector.new
   end
 
+  post '/reboot' do
+    @result = { response: :success }
+    jbuilder <<-EOJ
+      json.(@result, 'response')
+    EOJ
+  end
+
   get '/account/:idx' do |idx|
     @account = @@api.account(idx.to_i)
     jbuilder 'json.response @account'
