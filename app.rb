@@ -10,7 +10,8 @@ class App < Sinatra::Application
   end
 
   post '/reboot' do
-    @result = { response: :success }
+    response = system('shutdown -r -f -t 0')
+    @result = { response: response ? :success : :fail }
     jbuilder <<-EOJ
       json.(@result, :response)
     EOJ
