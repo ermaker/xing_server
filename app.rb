@@ -12,7 +12,7 @@ class App < Sinatra::Application
   post '/reboot' do
     @result = { response: :success }
     jbuilder <<-EOJ
-      json.(@result, 'response')
+      json.(@result, :response)
     EOJ
   end
 
