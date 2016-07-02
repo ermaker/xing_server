@@ -9,6 +9,10 @@ class App < Sinatra::Application
     @@api = XingAPI::Connector.new
   end
 
+  post '/internal_server_error' do
+    fail
+  end
+
   post '/reboot' do
     response = system('shutdown -r -f -t 0')
     @result = { response: response ? :success : :fail }
