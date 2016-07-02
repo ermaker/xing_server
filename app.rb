@@ -14,20 +14,9 @@ class App < Sinatra::Application
     jbuilder 'json.response @account'
   end
 
-  def to_symbol(value)
-    case value
-    when Array
-      value.map { |v| to_symbol(v) }
-    when Hash
-      Hash[value.map { |key, value| [key.to_sym, to_symbol(value)] }]
-    else
-      value
-    end
-  end
-
   post '/tr/:tr_name' do |tr_name|
     request.body.rewind
-    params = to_symbol(MultiJson.load(request.body.string))
+    params = MultiJson.load(request.body.string, symbolize_keys: true)
     case tr_name
     when 'CSPAT00600'
       @result = @@api.tr_CSPAT00600(
